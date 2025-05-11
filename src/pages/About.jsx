@@ -25,7 +25,7 @@ const About = ({ yourName, companyName }) => {
       className="min-h-screen w-full flex flex-col items-center justify-start py-12 text-white relative overflow-y-auto bg-gradient-to-br from-slate-900 to-gray-800"
     >
       <div className="container-custom relative z-10 w-full px-4 md:px-8">
-        <h1 className="section-title text-center mb-12 text-sky-400">About Me</h1>
+       
         
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
@@ -59,7 +59,7 @@ const About = ({ yourName, companyName }) => {
               <div className="bg-sky-900 bg-opacity-80 border-l-4 border-sky-500 p-4 rounded-r mb-6">
                 <h3 className="text-lg font-medium text-sky-300 mb-2">Fun Fact</h3>
                 <p className="text-gray-300">
-                  When I'm not coding, I love to [Your Hobby/Interest]! I also make the best [Favorite Food/Drink] according to my friends and family.
+                  One night at 4 AM, I battled a tricky API bug in pragya console-logging every permutation until I cracked it—my proudest coding marathon!
                 </p>
               </div>
             </motion.div>
