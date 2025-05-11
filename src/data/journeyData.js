@@ -19,7 +19,7 @@ const journeyData = [
     title: "Service Point Project",
     date: "Late November 2024 - January 2025",
     description: "My first project assignment. Focused on frontend development and team collaboration.",
-    image: "src/assets/servie_point.svg", // User mentioned this path, will need to confirm if it works
+    image: "src/assets/service-point.svg", // Updated filename
     experienceDetails: {
       summary: "Contributed to the Service Point project with a focus on redesign and responsiveness.",
       proudWork: [
