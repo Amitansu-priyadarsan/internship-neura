@@ -21,12 +21,12 @@ const ThankYou = ({ companyName = "Neuradynamics.ai", yourName = "Intern" }) => 
     {
       id: 2,
       name: "Anuj Sir, Akarshya, Sakshyam, & Pushpraj",
-      note: "For the fantastic collaboration on Service Point, your support, making late-night 'bridging' sessions productive, and to Pushpraja for his dedicated efforts on the project!"
+      note: "For the fantastic collaboration on Service Point, your support, making late-night 'bridging' sessions productive, and to Sakshyam for his dedicated efforts on the project!"
     },
     {
       id: 3,
       name: "Sandeep, Ashutosh, Pushpraj & Yuvraj",
-      note: "For your insights during the Pragya project, help with complex API debugging, sharing your technical expertise, and to Pushpraja for his valuable contributions here as well!"
+      note: "For your insights during the Pragya project, help with complex API debugging, sharing your technical expertise, and to Pushpraj for his valuable contributions here as well!"
     },
     {
       id: 4,
