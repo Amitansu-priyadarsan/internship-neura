@@ -53,14 +53,7 @@ const ThankYou = ({ companyName = "Neuradynamics.ai", yourName = "Intern" }) => 
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
         >
-          <motion.div
-            className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white text-sm font-semibold py-2 px-5 rounded-full mb-6 shadow-lg"
-            initial={{ opacity:0, y: -20 }}
-            animate={{ opacity:1, y: 0 }}
-            transition={{ type: 'spring', stiffness: 120, damping: 12, delay: 0.3 }}
-          >
-            Mission Accomplished!
-          </motion.div>
+          
 
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6"

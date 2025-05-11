@@ -38,12 +38,14 @@ function App() {
         >
           Previous
         </button>
-        <button
-          onClick={goToNextSlide}
-          className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
-        >
-          Next
-        </button>
+        {currentSlideIndex < slides.length - 1 && (
+          <button
+            onClick={goToNextSlide}
+            className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
+          >
+            Next
+          </button>
+        )}
       </div>
     </div>
   );
