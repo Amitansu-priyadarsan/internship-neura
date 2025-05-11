@@ -1,40 +1,51 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Journey from './pages/Journey';
-import Projects from './pages/Projects';
-import Challenges from './pages/Challenges';
-import ThankYou from './pages/ThankYou';
+import Journey from './pages/Journey'; // Import Journey slide
+import Projects from './pages/Projects'; // Import Projects slide
+import Challenges from './pages/Challenges'; // Import Challenges slide
+import ThankYou from './pages/ThankYou'; // Import ThankYou slide
+
+// Define your slides here. Each element is a component.
+// We will pass companyName and yourName to them.
+const slides = [Home, About, Journey, Projects, Challenges, ThankYou]; // Add ThankYou to the slides array
 
 function App() {
-  // This value is used to update the company name throughout the site
-  // Update this with your company name once
-  const [companyName, setCompanyName] = useState('[Company Name]');
-  
-  // This value is used to update your name throughout the site
-  // Update this with your name once
-  const [yourName, setYourName] = useState('[Your Name]');
+  const [companyName] = useState('NeuraDynamics.ai'); // Updated company name
+  const [yourName] = useState('Amitansu Priyadarsan'); // Updated your name
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  const CurrentSlideComponent = slides[currentSlideIndex];
+
+  const goToNextSlide = () => {
+    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  };
+
+  const goToPreviousSlide = () => {
+    setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+  };
 
   return (
-    <BrowserRouter>
-      <div className="flex flex-col min-h-screen bg-gray-50">
-        <Header companyName={companyName} />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home companyName={companyName} yourName={yourName} />} />
-            <Route path="/about" element={<About yourName={yourName} />} />
-            <Route path="/journey" element={<Journey />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/challenges" element={<Challenges />} />
-            <Route path="/thank-you" element={<ThankYou companyName={companyName} />} />
-          </Routes>
-        </main>
-        <Footer companyName={companyName} yourName={yourName} />
+    <div className="relative flex flex-col min-h-screen w-screen overflow-hidden bg-gray-900 text-white">
+      {/* Render the current slide */}
+      {CurrentSlideComponent && <CurrentSlideComponent companyName={companyName} yourName={yourName} />}
+
+      {/* Navigation Buttons */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
+        <button
+          onClick={goToPreviousSlide}
+          className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
+        >
+          Previous
+        </button>
+        <button
+          onClick={goToNextSlide}
+          className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
+        >
+          Next
+        </button>
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 

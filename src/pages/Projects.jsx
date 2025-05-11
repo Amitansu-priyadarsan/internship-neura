@@ -3,7 +3,7 @@ import ProjectCard from '../components/ProjectCard';
 import projectsData from '../data/projectsData';
 import { fadeIn, staggerContainer, transition } from '../utils/animations';
 
-const Projects = () => {
+const Projects = ({ companyName, yourName }) => {
   return (
     <motion.div
       initial="initial"
@@ -11,11 +11,11 @@ const Projects = () => {
       exit="exit"
       variants={fadeIn}
       transition={transition}
-      className="py-12"
+      className="min-h-screen w-full flex flex-col items-center justify-start py-12 text-white relative overflow-y-auto bg-gradient-to-br from-gray-800 to-indigo-900"
     >
-      <div className="container-custom">
+      <div className="container-custom relative z-10 w-full px-4 md:px-8">
         <motion.h1 
-          className="section-title text-center"
+          className="section-title text-center text-indigo-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -23,7 +23,7 @@ const Projects = () => {
         </motion.h1>
         
         <motion.p 
-          className="text-center text-gray-600 mb-12 max-w-3xl mx-auto"
+          className="text-center text-gray-300 mb-12 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -31,7 +31,7 @@ const Projects = () => {
           Explore the key projects I worked on during my internship and the contributions I made to each.
         </motion.p>
         
-        {/* Projects Grid */}
+        {/* Projects Grid - Assuming ProjectCard and projectsData are styled for dark theme */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
           variants={staggerContainer}
@@ -46,29 +46,30 @@ const Projects = () => {
               description={project.description}
               skills={project.skills}
               rating={project.rating}
+              // theme="dark" // If ProjectCard needs a theme prop
             />
           ))}
         </motion.div>
         
         {/* Technologies Used */}
-        <section className="bg-gray-50 rounded-2xl p-8 shadow-inner">
-          <h2 className="text-2xl font-bold text-center mb-8">Technologies I Worked With</h2>
+        <section className="bg-slate-800 bg-opacity-70 rounded-2xl p-8 shadow-xl mb-16">
+          <h2 className="text-2xl font-bold text-center mb-8 text-indigo-300">Technologies I Worked With</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {["React", "Redux", "JavaScript", "TypeScript", "CSS/SCSS", "Styled Components", "Git", "Figma"].map((tech, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-4 text-center rounded-lg shadow-sm"
+                className="bg-slate-700 p-4 text-center rounded-lg shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ 
                   y: -5, 
-                  boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" 
+                  backgroundColor: "rgba(99, 102, 241, 0.4)" // indigo-500 with opacity
                 }}
               >
-                <p className="font-medium">{tech}</p>
+                <p className="font-medium text-gray-100">{tech}</p>
               </motion.div>
             ))}
           </div>
@@ -76,14 +77,14 @@ const Projects = () => {
         
         {/* Testimonial */}
         <motion.div
-          className="mt-16 bg-blue-50 border border-blue-100 rounded-2xl p-8"
+          className="bg-indigo-900 bg-opacity-60 border border-indigo-700 rounded-2xl p-8 shadow-xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="flex flex-col items-center">
-            <div className="h-16 w-16 rounded-full overflow-hidden mb-4">
+            <div className="h-16 w-16 rounded-full overflow-hidden mb-4 shadow-lg border-2 border-indigo-400">
               <img 
                 src="https://images.pexels.com/photos/5792641/pexels-photo-5792641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                 alt="Mentor" 
@@ -91,11 +92,11 @@ const Projects = () => {
               />
             </div>
             <div className="text-center">
-              <p className="text-lg text-gray-700 italic mb-4">
-                "[Your Name] demonstrated remarkable growth during their internship. They approached challenges with enthusiasm and consistently delivered high-quality code. Their attention to detail and willingness to learn made them a valuable addition to our team."
+              <p className="text-lg text-gray-200 italic mb-4">
+                "{yourName} demonstrated remarkable growth during their internship. They approached challenges with enthusiasm and consistently delivered high-quality code. Their attention to detail and willingness to learn made them a valuable addition to our team."
               </p>
-              <p className="font-medium text-gray-900">- Your Mentor</p>
-              <p className="text-sm text-gray-600">Senior Frontend Developer, [Company Name]</p>
+              <p className="font-medium text-indigo-300">- Your Mentor</p>
+              <p className="text-sm text-gray-400">Senior Frontend Developer, {companyName}</p>
             </div>
           </div>
         </motion.div>
