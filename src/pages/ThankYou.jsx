@@ -42,13 +42,13 @@ const ThankYou = ({ companyName = "Neuradynamics.ai", yourName = "Intern" }) => 
       exit="exit"
       variants={fadeIn}
       transition={transition}
-      className="min-h-screen w-full py-16 md:py-20 flex flex-col items-center justify-center text-white relative overflow-y-auto bg-gradient-to-br from-indigo-700 via-purple-800 to-pink-700"
+      className="min-h-screen w-full pt-16 md:pt-20 pb-32 flex flex-col items-center justify-center text-white relative overflow-y-auto bg-gradient-to-br from-indigo-700 via-purple-800 to-pink-700"
     >
       <Confetti duration={8000} particleCount={150} />
       
       <div className="container-custom max-w-3xl relative z-10 w-full px-4 md:px-6">
         <motion.div 
-          className="text-center p-8 md:p-12 bg-slate-800 bg-opacity-80 rounded-2xl shadow-2xl backdrop-blur-md border border-purple-600/50"
+          className="text-center py-6 px-8 md:py-8 md:px-12 bg-slate-800 bg-opacity-80 rounded-2xl shadow-2xl backdrop-blur-md border border-purple-600/50"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
