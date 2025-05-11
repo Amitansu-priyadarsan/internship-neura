@@ -53,7 +53,7 @@ const Home = ({ companyName, yourName }) => {
           transition={{ delay: 1.0, duration: 0.5 }}
         >
           Six months ago, I stepped into {companyName}, with big dreams and a love for code. 
-          Join me as I share how I redesigned UIs, tamed APIs, and grew as a frontend developer!
+          Join me as I share how I redesigned UIs, tamed APIs, and grew as a Software  Developer!
         </motion.p>
 
         {/* Removing the redundant "Click 'Next' to Continue" span */}

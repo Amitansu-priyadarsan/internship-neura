@@ -12,8 +12,8 @@ const Challenges = () => {
       altText: 'Service Point Logo',
       cardTitle: 'Service Point: UI Crunch Time',
       challengeDescription: "Redesigning the Service Point UI in just 4 days felt like running a coding marathon with a tight deadline! Balancing aesthetics, functionality, and team feedback was overwhelming as a first-time intern.",
-      solutionDescription: "I broke the redesign into smaller tasks, sketching wireframes in Figma to plan the UI. I collaborated closely with Anuj, Akarshya, and Sakshyam, incorporating their feedback to refine the design. To hit the deadline, I prioritized key features and tested responsiveness early, ensuring the app shone on mobile in just 1 day!",
-      growthDescription: "This challenge taught me time management, teamwork, and how to balance speed with quality. I gained confidence in UI design and learned to communicate effectively in a team, setting the stage for my frontend journey. A key takeaway was learning to accept mistakes as part of the process; everyone makes them, the important part is to correct them and learn."
+      solutionDescription: "I broke the redesign into smaller tasks. I collaborated closely with Anuj, Akarshya, and Sakshyam, incorporating their feedback to refine the design. To hit the deadline, I prioritized key features and tested responsiveness early, ensuring the app shone on mobile in just 1 day!",
+      growthDescription: "This challenge taught me time management, teamwork, and how to balance speed with quality. I gained confidence in UI design and learned to communicate effectively in a team, setting the stage for my frontend journey. A key takeaway was learning to accept mistakes as part of the process, everyone makes them, the important part is to correct them and learn."
     },
     {
       id: 'pragya',
@@ -21,8 +21,8 @@ const Challenges = () => {
       altText: 'Pragya Logo',
       cardTitle: 'Pragya: The API Debugging Marathon',
       challengeDescription: "Debugging a complex API issue in Pragya was like solving a puzzle at 4 AM! The API kept throwing cryptic errors, and integrating it with Next.js while learning LangChain felt like juggling too many new tools at once.",
-      solutionDescription: "I turned into a console.log detective, logging every API call to trace the issue (yes, that 4 AM marathon!). I used Postman to test endpoints, collaborated with Sandeep and Ashutosh for insights, and studied Next.js docs to ensure smooth integration. For LangChain and LangSmith, I started with small experiments, building my understanding step-by-step.",
-      growthDescription: "This taught me to stay calm under pressure and break down complex problems. I leveled up my debugging skills, deepened my Next.js and AI tool knowledge, and learned to think like a software developer, not just a frontend coder. Further honed my ability to work collaboratively and effectively within a team environment."
+      solutionDescription: "I turned into a console.log detective, logging every API call to trace the issue (yes, that 4 AM marathon!). I used Postman to test endpoints, collaborated with Sandeep and Ashutosh for insights.For LangChain and LangSmith, I started with small experiments, building my understanding step-by-step.",
+      growthDescription: "This taught me to stay calm under pressure and break down complex problems. I leveled up my debugging skills, deepened my Next.js and AI tool knowledge, and learned to think like a software developer, not just a frontend coder. This also taught me the importance of unit testing and end-to-end testing with Cypress, which helped ensure code quality and reliability, contributing significantly to my growth as a developer. "
     },
     {
       id: 'neuradynamics-growth',

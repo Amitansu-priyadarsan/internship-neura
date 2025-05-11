@@ -21,7 +21,7 @@ const journeyData = [
     description: "My first project assignment. Focused on frontend development and team collaboration.",
     image: "src/assets/service-point.svg", // Updated filename
     experienceDetails: {
-      summary: "Contributed to the Service Point project with a focus on redesign and responsiveness.",
+      summary: "Contributed to the Service Point project with working on the UI as frontend developer.",
       proudWork: [
         "Redesigned the application in 4 days.",
         "Made the application fully mobile responsive in 1 day.",
@@ -33,7 +33,7 @@ const journeyData = [
   {
     id: 3,
     title: "Pragya Project",
-    date: "February 8, 2025 - Mid May 2025", // Adjusted end date to be before final presentation
+    date: "February 8, 2025 - Till Now", // Adjusted end date to be before final presentation
     description: "Joined the Pragya team. My role evolved towards full-stack problem solving and learning new technologies.",
     image: "src/assets/p.svg", // User mentioned this path
     experienceDetails: {
