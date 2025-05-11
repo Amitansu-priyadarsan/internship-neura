@@ -2,13 +2,13 @@ import { useState } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Journey from './pages/Journey'; // Import Journey slide
-import Projects from './pages/Projects'; // Import Projects slide
+
 import Challenges from './pages/Challenges'; // Import Challenges slide
 import ThankYou from './pages/ThankYou'; // Import ThankYou slide
 
 // Define your slides here. Each element is a component.
 // We will pass companyName and yourName to them.
-const slides = [Home, About, Journey, Projects, Challenges, ThankYou]; // Add ThankYou to the slides array
+const slides = [Home, About, Journey, Challenges, ThankYou]; // Removed Projects from the array
 
 function App() {
   const [companyName] = useState('NeuraDynamics.ai'); // Updated company name

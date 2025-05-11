@@ -1,9 +1,45 @@
 import { motion } from 'framer-motion';
-import ChallengeCard from '../components/ChallengeCard';
-import challengesData from '../data/challengesData';
 import { fadeIn, transition } from '../utils/animations';
+import servicePointLogo from '../assets/service-point.svg';
+import pragyaLogo from '../assets/p.svg';
+import neuradynamicsLogo from '../assets/neuradynamics_logo.jpeg';
 
-const Challenges = ({ companyName, yourName }) => {
+const Challenges = () => {
+  const challengeData = [
+    {
+      id: 'service-point',
+      logo: servicePointLogo,
+      altText: 'Service Point Logo',
+      cardTitle: 'Service Point: UI Crunch Time',
+      challengeDescription: "Redesigning the Service Point UI in just 4 days felt like running a coding marathon with a tight deadline! Balancing aesthetics, functionality, and team feedback was overwhelming as a first-time intern.",
+      solutionDescription: "I broke the redesign into smaller tasks, sketching wireframes in Figma to plan the UI. I collaborated closely with Anuj, Akarshya, and Sakshyam, incorporating their feedback to refine the design. To hit the deadline, I prioritized key features and tested responsiveness early, ensuring the app shone on mobile in just 1 day!",
+      growthDescription: "This challenge taught me time management, teamwork, and how to balance speed with quality. I gained confidence in UI design and learned to communicate effectively in a team, setting the stage for my frontend journey. A key takeaway was learning to accept mistakes as part of the process; everyone makes them, the important part is to correct them and learn."
+    },
+    {
+      id: 'pragya',
+      logo: pragyaLogo,
+      altText: 'Pragya Logo',
+      cardTitle: 'Pragya: The API Debugging Marathon',
+      challengeDescription: "Debugging a complex API issue in Pragya was like solving a puzzle at 4 AM! The API kept throwing cryptic errors, and integrating it with Next.js while learning LangChain felt like juggling too many new tools at once.",
+      solutionDescription: "I turned into a console.log detective, logging every API call to trace the issue (yes, that 4 AM marathon!). I used Postman to test endpoints, collaborated with Sandeep and Ashutosh for insights, and studied Next.js docs to ensure smooth integration. For LangChain and LangSmith, I started with small experiments, building my understanding step-by-step.",
+      growthDescription: "This taught me to stay calm under pressure and break down complex problems. I leveled up my debugging skills, deepened my Next.js and AI tool knowledge, and learned to think like a software developer, not just a frontend coder. Further honed my ability to work collaboratively and effectively within a team environment."
+    },
+    {
+      id: 'neuradynamics-growth',
+      logo: neuradynamicsLogo,
+      altText: 'Neuradynamics Logo',
+      cardTitle: 'Neuradynamics: My Overall Growth',
+      isGeneralLearning: true,
+      learnings: [
+        "Mastered the art of teamwork and late-night collaborative problem-solving (big shoutout to Anuj sir and the team for those 'bridging' sessions!).",
+        "Learned to take full ownership and responsibility for my work.",
+        "Became more meticulous, significantly reducing silly mistakes.",
+        "Overcame the fear of making mistakes, understanding they're stepping stones to learning, and that it's fine as everyone makes them – the key is to correct and learn.",
+        "Gained confidence in expressing my thoughts and ideas openly within the team."
+      ]
+    }
+  ];
+
   return (
     <motion.div
       initial="initial"
@@ -11,127 +47,91 @@ const Challenges = ({ companyName, yourName }) => {
       exit="exit"
       variants={fadeIn}
       transition={transition}
-      className="min-h-screen w-full flex flex-col items-center justify-start py-12 text-white relative overflow-y-auto bg-gradient-to-br from-slate-800 to-teal-900"
+      className="min-h-screen w-full flex flex-col items-center justify-start py-12 md:py-20 text-white relative overflow-y-auto bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900"
     >
-      <div className="container-custom relative z-10 w-full px-4 md:px-8">
+      <div className="container-custom relative z-10 w-full px-4 md:px-8 max-w-4xl mx-auto">
         <motion.h1 
-          className="section-title text-center text-teal-400"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-teal-400 mb-4"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          Challenges & Growth
+          Bugs, Battles, and Breakthroughs: My Growth at Neuradynamics.ai!
         </motion.h1>
         
         <motion.p 
-          className="text-center text-gray-300 mb-12 max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center text-gray-300 text-md md:text-lg mb-8"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Not everything was smooth sailing! Here are some challenges I faced and how I overcame them.
+          Every challenge was a chance to level up as a developer!
+        </motion.p>
+
+        <motion.p
+          className="text-center text-gray-400 mb-12 md:mb-16 max-w-3xl mx-auto text-sm md:text-base"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          From wrestling with tricky APIs to mastering new frameworks, my 6-month journey at Neuradynamics.ai taught me to tackle problems head-on and grow stronger with every bug squashed!
         </motion.p>
         
-        {/* Challenges - Assuming ChallengeCard is styled for dark theme */}
-        <div className="space-y-10 mb-16">
-          {challengesData.map((challenge) => (
-            <ChallengeCard
-              key={challenge.id}
-              title={challenge.title}
-              challenge={challenge.challenge}
-              solution={challenge.solution}
-              // theme="dark" // If ChallengeCard needs theme prop
-            />
+        <div className="space-y-10 md:space-y-12 mb-16 md:mb-20">
+          {challengeData.map((item, index) => (
+            <motion.div
+              key={item.id}
+              className="bg-slate-800 p-6 md:p-8 rounded-xl shadow-2xl border border-slate-700 hover:border-teal-500/70 transition-all duration-300 flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 + index * 0.25 }}
+              whileHover={{ y: -6, boxShadow: "0 12px 20px -5px rgba(45, 212, 191, 0.35), 0 5px 8px -3px rgba(45, 212, 191, 0.25)" }}
+            >
+              {item.logo && (
+                <div className="flex justify-center md:justify-start mb-4 md:mb-5">
+                  <img src={item.logo} alt={item.altText} className="h-8 md:h-10" />
+                </div>
+              )}
+              <h3 className={`text-xl md:text-2xl font-bold text-teal-300 mb-4 ${item.logo ? 'text-center md:text-left' : 'text-center'}`}>{item.cardTitle}</h3>
+              
+              {item.isGeneralLearning ? (
+                <ul className="list-disc list-inside space-y-2 text-gray-300 text-sm md:text-base leading-relaxed pl-2">
+                  {item.learnings.map((learning, i) => (
+                    <li key={i}>{learning}</li>
+                  ))}
+                </ul>
+              ) : (
+                <>
+                  <div>
+                    <h4 className="text-lg font-semibold text-teal-400 mt-3 mb-1">Challenge:</h4>
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">{item.challengeDescription}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-teal-400 mt-4 mb-1">Solution:</h4>
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">{item.solutionDescription}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-teal-400 mt-4 mb-1">Growth:</h4>
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">{item.growthDescription}</p>
+                  </div>
+                </>
+              )}
+            </motion.div>
           ))}
         </div>
         
-        {/* Growth Graph */}
-        <section className="bg-slate-800 bg-opacity-70 rounded-2xl p-8 shadow-xl mb-16">
-          <h2 className="text-2xl font-bold text-center mb-8 text-teal-300">My Growth Journey</h2>
-          
-          <div className="relative h-64 md:h-80">
-            {/* X-axis (Time) */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gray-600"></div> {/* Darker axis line */}
-            <div className="absolute bottom-0 left-0 right-0 flex justify-between">
-              <span className="text-sm text-gray-400">Month 1</span>
-              <span className="text-sm text-gray-400">Month 3</span>
-              <span className="text-sm text-gray-400">Month 6</span>
-            </div>
-            
-            {/* Y-axis (Skills) */}
-            <div className="absolute top-0 bottom-0 left-0 w-px bg-gray-600"></div> {/* Darker axis line */}
-            <div className="absolute top-0 bottom-0 left-0 flex flex-col justify-between items-start">
-              <span className="text-sm text-gray-400 -ml-2">Expert</span>
-              <span className="text-sm text-gray-400 -ml-2">Advanced</span>
-              <span className="text-sm text-gray-400 -ml-2">Intermediate</span>
-              <span className="text-sm text-gray-400 -ml-2">Beginner</span>
-            </div>
-            
-            {/* Growth Line */}
-            <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-              <motion.path
-                // Adjusted d attribute for a common SVG viewport (e.g., 0 0 1000 250 if graph is ~250px high)
-                // Assuming graph height roughly maps to 250 units, and width to 1000 units.
-                // Original: d="M 50,200 Q 200,150 400,80 T 800,50" -> This implies a specific large viewport.
-                // For a responsive SVG, path coordinates are often relative or scaled.
-                // For simplicity, let's assume viewport scaling makes these values work or they are placeholders.
-                // A more robust solution would use percentage-based coordinates or a viewBox.
-                d="M 50,200 Q 250,150 500,80 T 950,50" // Slightly adjusted for a typical 1000-width viewport
-                fill="none"
-                stroke="#2DD4BF" // teal-400
-                strokeWidth="3"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
-              />
-              
-              {/* Points on the curve */}
-              <motion.circle cx="50" cy="200" r="6" fill="#2DD4BF" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} />
-              <motion.circle cx="500" cy="80" r="6" fill="#2DD4BF" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} />
-              <motion.circle cx="950" cy="50" r="6" fill="#2DD4BF" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }} />
-            </svg>
-          </div>
-        </section>
-        
-        {/* Key Lessons */}
-        <section>
-          <h2 className="text-2xl font-bold text-center mb-8 text-teal-300">Key Lessons Learned</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div 
-              className="bg-slate-700 bg-opacity-80 p-6 rounded-lg border-l-4 border-teal-500 shadow-lg"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h3 className="text-xl font-bold text-teal-200 mb-3">Technical Lessons</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-300">
-                <li>The importance of clean, maintainable code</li>
-                <li>How to optimize frontend performance</li>
-                <li>Effective debugging techniques</li>
-                <li>Writing tests for components</li>
-                <li>The value of consistent code style</li>
-              </ul>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-slate-700 bg-opacity-80 p-6 rounded-lg border-l-4 border-teal-500 shadow-lg" // Changed to teal for consistency
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h3 className="text-xl font-bold text-teal-200 mb-3">Professional Lessons</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-300">
-                <li>Effective communication in a tech team</li>
-                <li>Taking and applying feedback constructively</li>
-                <li>Time management and prioritization</li>
-                <li>Balancing learning with productivity</li>
-                <li>The importance of asking questions</li>
-              </ul>
-            </motion.div>
-          </div>
-        </section>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 + challengeData.length * 0.25 }}
+        >
+          <p className="text-center text-gray-300 text-md md:text-lg mb-6 max-w-3xl mx-auto">
+            Every challenge at Neuradynamics.ai was a stepping stone. By May 12, 2025, I'm not just coding—I'm solving problems with purpose, thanks to the whole team!
+          </p>
+        </motion.div>
+
       </div>
     </motion.div>
   );
